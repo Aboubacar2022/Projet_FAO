@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15484,7 +15483,7 @@ Proportion : 110.9 %
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4><U>3. Idem pour les végétaux&lt;/u&gt;</h4>
+<h4><U>3. Idem pour les végétaux </u>;</h4>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16162,12 +16161,6 @@ Proportion d&#39;alimentation humaine : 17.6 %
 </div>
 
 </div>
-</body>
-
-
-
-
-
 
 
 </html>
