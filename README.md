@@ -38,232 +38,68 @@ Seaborn
 ### 📂 Jeux de données utilisés
 
 Le projet repose sur 4 fichiers principaux :
+	1. Disponibilité alimentaire (17 variables) (Données en kcal/personne/jour, protéines, milliers de tonnes, etc.)
+	2. Population (exprimée en milliers d’habitants) 
+	3. Aide alimentaire (Données converties en kilogrammes) Harmonisation des noms de colonnes 
+	4. Sous-nutrition (Valeurs exprimées en millions d’habitants) Gestion des valeurs approximatives (<0.1 remplacé par 0)
 
-Disponibilité alimentaire
+### 🔎 Méthodologie
+### 1️⃣ Nettoyage des données
 
-17 variables
-
-Données en kcal/personne/jour, protéines, milliers de tonnes, etc.
-
-Population
-
-Population exprimée en milliers d’habitants (convertie en habitants)
-
-Aide alimentaire
-
-Données converties en kilogrammes
-
-Harmonisation des noms de colonnes
-
-Sous-nutrition
-
-Valeurs exprimées en millions d’habitants (converties en habitants)
-
-Gestion des valeurs approximatives (<0.1 remplacé par 0)
-
-🔎 Méthodologie
-1️⃣ Nettoyage des données
-
-Traitement des valeurs manquantes (fillna)
-
-Conversion des unités (milliers → unités, millions → unités)
-
-Harmonisation des noms de colonnes
-
-Suppression des incohérences
+- Traitement des valeurs manquantes (fillna)
+- Conversion des unités (milliers → unités, millions → unités)
+- Harmonisation des noms de colonnes
+- Suppression des incohérences
 
 2️⃣ Calcul de la sous-nutrition
 
 Jointure des tables population et sous-nutrition pour calculer :
 
-𝑃
-𝑟
-𝑜
-𝑝
-𝑜
-𝑟
-𝑡
-𝑖
-𝑜
-𝑛
-=
-𝑁
-𝑜
-𝑚
-𝑏
-𝑟
-𝑒
- 
-𝑑
-𝑒
- 
-𝑝
-𝑒
-𝑟
-𝑠
-𝑜
-𝑛
-𝑛
-𝑒
-𝑠
- 
-𝑠
-𝑜
-𝑢
-𝑠
- 
-𝑎
-𝑙
-𝑖
-𝑚
-𝑒
-𝑛
-𝑡
-𝑒
-ˊ
-𝑒
-𝑠
-𝑃
-𝑜
-𝑝
-𝑢
-𝑙
-𝑎
-𝑡
-𝑖
-𝑜
-𝑛
- 
-𝑡
-𝑜
-𝑡
-𝑎
-𝑙
-𝑒
-Proportion=
-Population totale
-Nombre de personnes sous aliment
-e
-ˊ
-es
-	​
+𝑃𝑟𝑜𝑝𝑜𝑟𝑡𝑖𝑜𝑛 = Nombre de personnes sous-alimentées / Population Totale
+​
 
-3️⃣ Capacité théorique à nourrir la population mondiale
+### 3️⃣ Capacité théorique à nourrir la population mondiale
+- Conversion des disponibilités alimentaires en kcal totales :
+  Disponibiliteˊ totale=kcal/pers/j×population×365
 
-Conversion des disponibilités alimentaires en kcal totales :
+- Hypothèse retenue
+  	2500 kcal/jour/personne (moyenne des besoins journaliers)
+  Calcul du nombre théorique de personnes pouvant être nourries.
 
-𝐷
-𝑖
-𝑠
-𝑝
-𝑜
-𝑛
-𝑖
-𝑏
-𝑖
-𝑙
-𝑖
-𝑡
-𝑒
-ˊ
- 
-𝑡
-𝑜
-𝑡
-𝑎
-𝑙
-𝑒
-=
-𝑘
-𝑐
-𝑎
-𝑙
-/
-𝑝
-𝑒
-𝑟
-𝑠
-/
-𝑗
-×
-𝑝
-𝑜
-𝑝
-𝑢
-𝑙
-𝑎
-𝑡
-𝑖
-𝑜
-𝑛
-×
-365
-Disponibilit
-e
-ˊ
- totale=kcal/pers/j×population×365
-
-Hypothèse retenue :
-2500 kcal/jour/personne (moyenne des besoins journaliers)
-
-Calcul du nombre théorique de personnes pouvant être nourries.
-
-4️⃣ Analyse spécifique des céréales
+### 4️⃣ Analyse spécifique des céréales
 
 Étude de la répartition entre :
-
-🌾 Alimentation humaine
-
-🐄 Alimentation animale
+	- 🌾 Alimentation humaine
+	- 🐄 Alimentation animale
 
 Céréales analysées :
 
-Avoine
+- Avoine
+- Blé et produits
+- Maïs et produits
+- Riz et produits
+- Orge et produits
+- Seigle et produits
+- Sorgho et produits
+- Millet et produits
+- Céréales, autres
 
-Blé et produits
+Calcul des proportions : 
+- Part destinée à l’alimentation humaine
+- Part destinée à l’alimentation animale
 
-Maïs et produits
+### 📈 Analyses complémentaires
+- Top 15 des pays avec la plus forte proportion de sous-alimentation
+- Top 15 des pays ayant reçu le plus d’aide alimentaire depuis 2013
+- Pays avec :
+  - La plus forte disponibilité alimentaire par habitant
+  - La plus faible disponibilité alimentaire par habitant
+  - Étude de cas spécifique : Thaïlande et manioc
 
-Riz et produits
-
-Orge et produits
-
-Seigle et produits
-
-Sorgho et produits
-
-Millet et produits
-
-Céréales, autres
-
-Calcul des proportions :
-
-Part destinée à l’alimentation humaine
-
-Part destinée à l’alimentation animale
-
-📈 Analyses complémentaires
-
-Top 15 des pays avec la plus forte proportion de sous-alimentation
-
-Top 15 des pays ayant reçu le plus d’aide alimentaire depuis 2013
-
-Pays avec :
-
-La plus forte disponibilité alimentaire par habitant
-
-La plus faible disponibilité alimentaire par habitant
-
-Étude de cas spécifique : Thaïlande et manioc
-
-🚀 Résultats attendus
+### 🚀 Résultats attendus
 
 Ce projet permet de :
-
-Mettre en évidence les déséquilibres alimentaires mondiaux
-
-Évaluer la capacité théorique du système alimentaire mondial
-
-Identifier les priorités géographiques en matière d’aide alimentaire
-
-Comprendre la répartition entre alimentation humaine et animale
+- Mettre en évidence les déséquilibres alimentaires mondiaux
+- Évaluer la capacité théorique du système alimentaire mondial
+- Identifier les priorités géographiques en matière d’aide alimentaire
+- Comprendre la répartition entre alimentation humaine et animale
